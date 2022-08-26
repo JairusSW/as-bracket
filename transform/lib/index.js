@@ -1,6 +1,6 @@
 import { Transform } from "assemblyscript/dist/transform.js";
 import { BaseVisitor, SimpleParser } from "visitor-as/dist/index.js";
-import { getName } from "visitor-as/dist/utils.js";
+import { getName, toString } from "visitor-as/dist/utils.js";
 console.log("Initializing AS-Bracket Transform");
 class ClassData {
     constructor() {
@@ -89,16 +89,10 @@ class AsBracketTransform extends BaseVisitor {
         this.currentClass.name = getName(node);
         this.visit(node.members);
     }
-    /*visitElementAccessExpression(node: ElementAccessExpression): void {
+    visitElementAccessExpression(node) {
         // should replace vec["x"] with vec["x"].get<type>()
         console.log("Element Access: " + toString(node));
-        const repalacer = new RangeTransform(node);
-        const replacement = SimpleParser.parseExpression(`${toString(node)}.get<${this.currentClass.types[this.currentClass.types.length - 1]}>()`);
-        repalacer.visit(replacement);
-        replacement.range.source = node.range.source;
-        node = replacement;
-        //this.visit(replacement.range.source)
-    }*/
+    }
     visitSource(node) {
         super.visitSource(node);
         //const importStatement = SimpleParser.parseStatement("import * as __Variant from \"as-variant/assembly\"") as ImportStatement;

@@ -21,7 +21,7 @@
     "transform"
   ],
   "author": "Jairus Tanaka",
-  "contributers": [],
+  "contributors": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JairusSW/as-bracket/issues"
@@ -33,8 +33,8 @@
   },
   "devDependencies": {
     "as-rainbow": "^0.1.0",
-    "assemblyscript": "0.20.9",
-    "typescript": "^4.7.4"
+    "assemblyscript": "0.20.18",
+    "typescript": "^4.8.2"
   },
   "type": "module",
   "exports": {
