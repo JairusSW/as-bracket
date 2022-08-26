@@ -1,0 +1,46 @@
+{
+  "name": "as-bracket",
+  "version": "0.1.0",
+  "description": "Bracket notation for AssemblyScript",
+  "main": "./transform/lib/index.js",
+  "scripts": {
+    "build:test": "asc assembly/test.ts --target test",
+    "build:transform": "tsc -p ./transform",
+    "run:test": "wasmtime ./build/test.wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairusSW/as-bracket.git"
+  },
+  "keywords": [
+    "bracket",
+    "notation",
+    "property",
+    "access",
+    "assemblyscript",
+    "transform"
+  ],
+  "author": "Jairus Tanaka",
+  "contributers": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JairusSW/as-bracket/issues"
+  },
+  "homepage": "https://github.com/JairusSW/as-bracket#readme",
+  "dependencies": {
+    "as-variant": "^0.4.0",
+    "visitor-as": "^0.10.0"
+  },
+  "devDependencies": {
+    "as-rainbow": "^0.1.0",
+    "assemblyscript": "0.20.9",
+    "typescript": "^4.7.4"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./transform/lib/index.js",
+      "types": "./transform/lib/index.d.ts"
+    }
+  }
+}
