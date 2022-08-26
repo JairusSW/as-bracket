@@ -28,8 +28,7 @@ const player: PlayerData = {
     }
 }*/
 
-vec["x"]
 // TODO: Use transform to add .get<T>() method to the end of bracket notations
-console.log(rainbow.blueBright("vec[\"x\"] " + vec["x"].toString()))
-console.log(rainbow.blueBright("vec[\"y\"] " + vec["y"].toString()))
-console.log(rainbow.blueBright("vec[\"x\"] + vec[\"y\"] = " + (vec["x"] + vec["y"]).toString()))
+console.log(rainbow.blueBright("vec[\"x\"].get<f32>() " + vec["x"].get<f32>().toString()))
+console.log(rainbow.blueBright("vec[\"y\"].get<f32>() " + vec["y"].get<f32>().toString()))
+console.log(rainbow.blueBright("vec[\"x\"].get<f32>() + vec[\"y\"].get<f32>() = " + (vec["x"].get<f32>() + vec["y"].get<f32>()).toString()))
