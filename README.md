@@ -28,6 +28,7 @@ Via CLI argument
 
 ```
 asc ... --transform as-bracket
+```
 
 ## Usage
 
