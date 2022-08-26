@@ -90,12 +90,14 @@ class AsBracketTransform extends BaseVisitor {
         this.visit(node.members);
     }
     /*visitElementAccessExpression(node: ElementAccessExpression): void {
+        // should replace vec["x"] with vec["x"].get<type>()
         console.log("Element Access: " + toString(node));
         const repalacer = new RangeTransform(node);
         const replacement = SimpleParser.parseExpression(`${toString(node)}.get<${this.currentClass.types[this.currentClass.types.length - 1]}>()`);
         repalacer.visit(replacement);
+        replacement.range.source = node.range.source;
         node = replacement;
-        this.visitSource(node.range.source)
+        //this.visit(replacement.range.source)
     }*/
     visitSource(node) {
         super.visitSource(node);
